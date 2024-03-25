@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 25vmin;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.container {
+  margin: auto;
+
+  height: 75vmin;
+  width: 100vmin;
+
+  position: relative;
+
+  > img {
+    position: absolute;
+    cursor: pointer;
+
+    mix-blend-mode: multiply;
+  }
+
+  .bass-drum {
+    width: 30%;
+
+    left: 32.5%;
+    bottom: 20%;
+
+    border-radius: 50%;
+  }
+
+  .bass-drum-pedal {
+    width: 12%;
+
+    left: 42%;
+    bottom: 20%;
+  }
+
+  .high-tom,
+  .low-tom {
+    width: 15%;
+
+    bottom: 55.5%;
+
+    filter: grayscale(1);
+  }
+
+  .high-tom {
+    left: 33%;
+  }
+  .low-tom {
+    left: 48%;
+  }
+
+  .floor-tom {
+    width: 22%;
+
+    right: 19%;
+    bottom: 15%;
+
+    z-index: 2;
+  }
+
+  .ride-cymbal {
+    height: 80%;
+    width: 35%;
+
+    right: 0%;
+    bottom: 10%;
+  }
+
+  .snare-drum {
+    width: 20%;
+
+    left: 15%;
+    bottom: 15%;
+
+    filter: grayscale(1);
+    z-index: 2;
+  }
+
+  .crash-cymbal {
+    height: 70%;
+    width: 30%;
+
+    left: 0%;
+    bottom: 12%;
+  }
+
+  .smash {
+    animation: smash alternate 0.5s;
+  }
+  .kick {
+    animation: kick alternate 0.5s;
+  }
+  .blink {
+    animation: blink alternate 1s;
+  }
+}
+
+@keyframes smash {
+  0%,
+  100% {
+    transform: scale(1.02, 0.98);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes kick {
+  0%,
+  100% {
+    transform: scale(1, 0.8);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
